@@ -396,7 +396,7 @@ export const getVideosByFilter = async (req, res) => {
 
             const currentPage = page || 1;
             const currentLimit = limit || 12;
-
+            
             const user = await User.findOne({ clerk_user_id: user_id });
 
             if (!user) {

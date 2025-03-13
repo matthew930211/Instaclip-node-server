@@ -21,8 +21,7 @@ router.post("/clerk-webhook", async (req, res) => {
             const username = body.data.first_name + " " + body.data.last_name;
             const profile_image_url = body.data.profile_image_url;
 
-            const existedUser = await User.findOne({ email: email_address });
-            console.log({
+            console.log("👤 Creating user with data:", {
                 clerk_user_id: userId,
                 username: username,
                 email: email_address,
